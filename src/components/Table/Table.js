@@ -7,10 +7,12 @@ import { Link } from "react-router-dom";
 
 class Table extends Component {
   state = {
+    searchedCountry: "",
     totalConfirmedLatest: 0,
     totalDeathsLatest: 0,
     totalRecoveredLatest: 0,
     allData: [],
+    filteredData: [],
     loading: true,
   };
   componentDidMount() {
@@ -19,6 +21,7 @@ class Table extends Component {
       res.data.confirmed.locations.forEach((l, index) => {
         data.push({
           country: l.country,
+          countryCode: l.country_code,
           latitude: l.coordinates.latitude,
           longitude: l.coordinates.longitude,
           historyConfirmed: l.history,
@@ -52,19 +55,29 @@ class Table extends Component {
           }
         });
       });
-      console.log(data);
 
       this.setState({
         totalConfirmedLatest: res.data.latest.confirmed,
         totalDeathsLatest: res.data.latest.deaths,
         totalRecoveredLatest: res.data.latest.recovered,
         allData: data,
+        filteredData: data,
         loading: false,
       });
+      console.log(data);
     });
   }
   clickHandler = (data) => {
     this.props.setHistory(data);
+  };
+  changeHandler = (event) => {
+    let filters = this.state.allData.filter((d) => {
+      return d.country.toLowerCase().includes(event.target.value.toLowerCase());
+    });
+    this.setState({
+      filteredData: filters,
+      searchedCountry: event.target.value,
+    });
   };
   render() {
     let spinner = null;
@@ -101,7 +114,7 @@ class Table extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.allData.map((data, index) => {
+              {this.state.filteredData.map((data, index) => {
                 return (
                   <tr key={index}>
                     <th scope="row">{index + 1}</th>
@@ -124,6 +137,17 @@ class Table extends Component {
     }
     return (
       <div style={{ padding: "0 5rem" }}>
+        <div className="form-group">
+          <input
+            style={{ backgroundColor: "silver" }}
+            className="form-control"
+            placeholder="Search Country"
+            value={this.state.searchedCountry}
+            onChange={this.changeHandler}
+            autoFocus
+          />
+        </div>
+
         {spinner}
         {table}
       </div>

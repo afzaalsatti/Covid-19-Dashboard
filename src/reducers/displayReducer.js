@@ -3,7 +3,11 @@ import {
 } from "../actions/actionsTypes"
 
 const initialState = {
-    historyConfirmed: {}
+    historyConfirmed: {},
+    historyDeaths: {},
+    historyRecovered: {},
+    countryCode: '',
+    countryName: ''
 }
 
 const display = (state = initialState, action) => {
@@ -11,7 +15,11 @@ const display = (state = initialState, action) => {
         case SET_HISTORY: {
             return {
                 ...state,
-                historyConfirmed: action.payload
+                historyConfirmed: action.payload.historyConfirmed,
+                historyDeaths: action.payload.historyDeaths,
+                historyRecovered: action.payload.historyRecovered,
+                countryName: action.payload.country,
+                countryCode: action.payload.countryCode
             }
         }
         default:

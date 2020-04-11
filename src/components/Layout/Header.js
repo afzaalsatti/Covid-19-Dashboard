@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import SideDrawer from "../SideDrawer/SideDrawer";
+import { NavLink } from "react-router-dom";
 
 class Header extends Component {
   render() {
     return (
-      <div>
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <div style={{ marginBottom: "5rem" }}>
+        <nav
+          className="navbar navbar-expand-sm navbar-dark bg-dark mb-4"
+          style={{
+            position: "fixed",
+            width: "100%",
+            top: "0",
+          }}
+        >
           <div className="container">
             <SideDrawer />
             <a className="navbar-brand" href="#">
@@ -22,22 +30,27 @@ class Header extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <NavLink className="nav-link" to="/">
                     Home
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
 
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Background
-                  </a>
+                  <NavLink className="nav-link" to="/map">
+                    World Map
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <NavLink className="nav-link" to="/precautions">
+                    Precautions
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/about" className="nav-link">
                     About
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>

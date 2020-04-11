@@ -5,7 +5,7 @@ class Footer extends Component {
     return (
       <div>
         <footer className="bg-dark text-white mt-5 p-4 text-center">
-          Copyright &copy; 2020 COVID-19
+          Copyright &copy; {new Date().getFullYear()} COVID-19
         </footer>
       </div>
     );
