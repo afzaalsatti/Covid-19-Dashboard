@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 class Header extends Component {
   render() {
     return (
-      <div style={{ marginBottom: "5rem" }}>
+      <div style={{ marginBottom: "61px" }}>
         <nav
           className="navbar navbar-expand-sm navbar-dark bg-dark mb-4"
           style={{
@@ -16,9 +16,9 @@ class Header extends Component {
         >
           <div className="container">
             <SideDrawer />
-            <a className="navbar-brand" href="#">
+            <NavLink className="navbar-brand" to="/">
               COVID-19
-            </a>
+            </NavLink>
             <button
               className="navbar-toggler"
               type="button"

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./SideDrawer.css";
+import { NavLink } from "react-router-dom";
+
 class SideDrawer extends Component {
   openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -26,11 +28,11 @@ class SideDrawer extends Component {
           >
             &times;
           </a>
-          <a href="#">Home</a>
-          <a href="#">Graph</a>
-          <a href="#">Map</a>
-          <a href="#">Precautions</a>
-          <a href="#">About Us</a>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/graph">Graph</NavLink>
+          <NavLink to="/map">Map</NavLink>
+          <NavLink to="/precautions">Precautions</NavLink>
+          <NavLink to="/about">About Us</NavLink>
         </div>
 
         <div id="main">

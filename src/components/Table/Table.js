@@ -4,6 +4,7 @@ import Spinner from "../Layout/Spinner";
 import { connect } from "react-redux";
 import { setHistory } from "../../actions/displayAction";
 import { Link } from "react-router-dom";
+import { setState } from "../../actions/displayAction";
 
 class Table extends Component {
   state = {
@@ -16,56 +17,64 @@ class Table extends Component {
     loading: true,
   };
   componentDidMount() {
-    axios.get("https://covid19api.herokuapp.com/").then((res) => {
-      let data = [];
-      res.data.confirmed.locations.forEach((l, index) => {
-        data.push({
-          country: l.country,
-          countryCode: l.country_code,
-          latitude: l.coordinates.latitude,
-          longitude: l.coordinates.longitude,
-          historyConfirmed: l.history,
-          latestConfirmed: l.latest,
-          historyDeaths: null,
-          latestDeaths: null,
-          historyRecovered: null,
-          latestRecovered: null,
-        });
-      });
+    if (Object.keys(this.props.state.tableState).length === 0) {
+      console.log(this.props.state);
 
-      res.data.deaths.locations.forEach((l) => {
-        data.forEach((d, index) => {
-          if (d.country === l.country) {
-            data[index] = {
-              ...d,
-              historyDeaths: l.history,
-              latestDeaths: l.latest,
-            };
-          }
+      axios.get("https://covid19api.herokuapp.com/").then((res) => {
+        let data = [];
+        res.data.confirmed.locations.forEach((l, index) => {
+          data.push({
+            country: l.country,
+            countryCode: l.country_code,
+            latitude: l.coordinates.latitude,
+            longitude: l.coordinates.longitude,
+            historyConfirmed: l.history,
+            latestConfirmed: l.latest,
+            historyDeaths: null,
+            latestDeaths: null,
+            historyRecovered: null,
+            latestRecovered: null,
+          });
         });
-      });
-      res.data.recovered.locations.forEach((l) => {
-        data.forEach((d, index) => {
-          if (d.country === l.country) {
-            data[index] = {
-              ...d,
-              historyRecovered: l.history,
-              latestRecovered: l.latest,
-            };
-          }
-        });
-      });
 
+        res.data.deaths.locations.forEach((l) => {
+          data.forEach((d, index) => {
+            if (d.country === l.country) {
+              data[index] = {
+                ...d,
+                historyDeaths: l.history,
+                latestDeaths: l.latest,
+              };
+            }
+          });
+        });
+        res.data.recovered.locations.forEach((l) => {
+          data.forEach((d, index) => {
+            if (d.country === l.country) {
+              data[index] = {
+                ...d,
+                historyRecovered: l.history,
+                latestRecovered: l.latest,
+              };
+            }
+          });
+        });
+
+        this.setState({
+          totalConfirmedLatest: res.data.latest.confirmed,
+          totalDeathsLatest: res.data.latest.deaths,
+          totalRecoveredLatest: res.data.latest.recovered,
+          allData: data,
+          filteredData: data,
+          loading: false,
+        });
+        this.props.setState(this.state);
+      });
+    } else {
       this.setState({
-        totalConfirmedLatest: res.data.latest.confirmed,
-        totalDeathsLatest: res.data.latest.deaths,
-        totalRecoveredLatest: res.data.latest.recovered,
-        allData: data,
-        filteredData: data,
-        loading: false,
+        ...this.props.state.tableState,
       });
-      console.log(data);
-    });
+    }
   }
   clickHandler = (data) => {
     this.props.setHistory(data);
@@ -87,7 +96,11 @@ class Table extends Component {
     } else {
       table = (
         <div>
-          <table className="table table-bordered">
+          <table
+            className={`table table-bordered ${
+              this.props.darkMode ? "table-dark" : ""
+            }`}
+          >
             <thead className="thead-dark">
               <tr>
                 <th scope="col">#</th>
@@ -136,7 +149,11 @@ class Table extends Component {
       );
     }
     return (
-      <div style={{ padding: "0 5rem" }}>
+      <div
+        style={{
+          padding: "0 5rem",
+        }}
+      >
         <div className="form-group">
           <input
             style={{ backgroundColor: "silver" }}
@@ -155,4 +172,10 @@ class Table extends Component {
   }
 }
 
-export default connect(null, { setHistory })(Table);
+const mapStateToProps = (state) => {
+  return {
+    state: state.display,
+  };
+};
+
+export default connect(mapStateToProps, { setHistory, setState })(Table);

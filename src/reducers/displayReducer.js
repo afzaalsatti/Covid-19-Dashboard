@@ -1,5 +1,6 @@
 import {
-    SET_HISTORY
+    SET_HISTORY,
+    SET_STATE
 } from "../actions/actionsTypes"
 
 const initialState = {
@@ -7,7 +8,8 @@ const initialState = {
     historyDeaths: {},
     historyRecovered: {},
     countryCode: '',
-    countryName: ''
+    countryName: '',
+    tableState: {}
 }
 
 const display = (state = initialState, action) => {
@@ -20,6 +22,14 @@ const display = (state = initialState, action) => {
                 historyRecovered: action.payload.historyRecovered,
                 countryName: action.payload.country,
                 countryCode: action.payload.countryCode
+            }
+        }
+        case SET_STATE: {
+            return {
+                ...state,
+                tableState: {
+                    ...action.payload
+                }
             }
         }
         default:
