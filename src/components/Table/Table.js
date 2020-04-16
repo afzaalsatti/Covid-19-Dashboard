@@ -6,6 +6,8 @@ import { setHistory } from "../../actions/displayAction";
 import { Link } from "react-router-dom";
 import { setState } from "../../actions/displayAction";
 
+import "./Table.css";
+
 class Table extends Component {
   state = {
     searchedCountry: "",
@@ -95,7 +97,7 @@ class Table extends Component {
       spinner = <Spinner />;
     } else {
       table = (
-        <div>
+        <div className="table-responsive">
           <table
             className={`table table-bordered ${
               this.props.darkMode ? "table-dark" : ""
@@ -149,11 +151,7 @@ class Table extends Component {
       );
     }
     return (
-      <div
-        style={{
-          padding: "0 5rem",
-        }}
-      >
+      <div className="Table-Main">
         <div className="form-group">
           <input
             style={{ backgroundColor: "silver" }}

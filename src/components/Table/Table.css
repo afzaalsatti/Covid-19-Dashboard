@@ -1,0 +1,9 @@
+.Table-Main {
+    padding: 0 5rem
+}
+
+@media screen and (max-width: 600px) {
+    .Table-Main {
+        padding: 0;
+    }
+}

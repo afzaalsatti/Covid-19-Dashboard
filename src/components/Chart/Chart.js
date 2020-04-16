@@ -20,8 +20,6 @@ class Chart extends Component {
       });
 
       const keys = Object.keys(this.props.history.historyConfirmed);
-      const sortedKeys = keys.sort((a, b) => new Date(b) !== new Date(a));
-      console.log(sortedKeys);
 
       const confirmedValues = Object.values(
         this.props.history.historyConfirmed
@@ -31,33 +29,33 @@ class Chart extends Component {
         this.props.history.historyRecovered
       );
 
-      const K1 = [];
-      const V1 = [];
-      const V2 = [];
-      const V3 = [];
-      let i = 0;
-      if (keys) {
-        for (let index = 0; index < keys.length; index += 5) {
-          K1[i++] = keys[index];
-        }
-        i = 0;
-        for (let index = 0; index < confirmedValues.length; index += 5) {
-          V1[i++] = confirmedValues[index];
-        }
-        i = 0;
-        for (let index = 0; index < deathsValues.length; index += 5) {
-          V2[i++] = deathsValues[index];
-        }
-        i = 0;
-        for (let index = 0; index < recoveredValues.length; index += 5) {
-          V3[i++] = recoveredValues[index];
+      for (let i = 0; i < keys.length; i++) {
+        for (let j = i; j < keys.length; j++) {
+          if (new Date(keys[i]).getTime() > new Date(keys[j]).getTime()) {
+            let temp1 = keys[i];
+            let temp2 = confirmedValues[i];
+            let temp3 = deathsValues[i];
+            let temp4 = recoveredValues[i];
+            keys[i] = keys[j];
+            keys[j] = temp1;
+
+            confirmedValues[i] = confirmedValues[j];
+            confirmedValues[j] = temp2;
+
+            deathsValues[i] = deathsValues[j];
+            deathsValues[j] = temp3;
+
+            recoveredValues[i] = recoveredValues[j];
+            recoveredValues[j] = temp4;
+          }
         }
       }
+
       this.setState({
-        dates: K1,
-        confirmedCases: V1,
-        deathsCases: V2,
-        recoveredCases: V3,
+        dates: keys,
+        confirmedCases: confirmedValues,
+        deathsCases: deathsValues,
+        recoveredCases: recoveredValues,
         show: true,
       });
     }
@@ -69,7 +67,6 @@ class Chart extends Component {
       bar = (
         <div>
           <img
-            style={{ marginLeft: "5.3rem" }}
             src={`https://www.countryflags.io/${this.props.history.countryCode}/flat/64.png`}
           ></img>
           {this.props.darkMode ? (
@@ -109,6 +106,30 @@ class Chart extends Component {
                 display: true,
                 text: "CORONA VIRUS COVID-19",
                 fontSize: 25,
+              },
+              scales: {
+                yAxes: [
+                  {
+                    gridLines: {
+                      zeroLineColor: this.props.darkMode
+                        ? "#B2BABB"
+                        : "#212F3D",
+                    },
+                  },
+                ],
+                xAxes: [
+                  {
+                    gridLines: {
+                      zeroLineColor: this.props.darkMode
+                        ? "#B2BABB"
+                        : "#212F3D",
+                    },
+                    ticks: {
+                      autoSkip: true,
+                      maxTicksLimit: 10,
+                    },
+                  },
+                ],
               },
             }}
           />

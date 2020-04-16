@@ -10,6 +10,7 @@ class Header extends Component {
           className="navbar navbar-expand-sm navbar-dark bg-dark mb-4"
           style={{
             position: "fixed",
+            zIndex: "1",
             width: "100%",
             top: "0",
           }}

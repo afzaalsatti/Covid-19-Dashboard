@@ -1,0 +1,39 @@
+.main {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-column-gap: 0.4rem;
+}
+
+.color-white {
+    color: rgba(204, 209, 209, 0.7);
+}
+
+
+@media screen and (min-width: 1000px) {
+    .container {
+        padding: 0 7rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-row-gap: 1.2rem;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        height: auto;
+    }
+}

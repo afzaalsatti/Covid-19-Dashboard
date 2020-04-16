@@ -1,23 +1,26 @@
 import React, { Component } from "react";
+import image1 from "../../assets/img/sneezingwoman.png";
+import image2 from "../../assets/img/protect-wash-hands.png";
+import image3 from "../../assets/img/protect-quarantine.png";
+import image4 from "../../assets/img/cloth-face-cover.png";
+import image5 from "../../assets/img/COVIDweb_06_coverCough.png";
+import image6 from "../../assets/img/COVIDweb_09_clean.png";
+
+import "./Preventions.css";
 
 class Preventions extends Component {
   render() {
-    let color = null;
-    if (this.props.darkMode) {
-      color = "rgba(204, 209, 209, 0.7)";
-    }
     return (
-      <div style={{ color: color, padding: "0 20rem" }}>
+      <div
+        className={
+          this.props.darkMode
+            ? "container color-white styling"
+            : "container styling"
+        }
+      >
         <h1>How it spreads</h1>
-        <span
-          style={{
-            display: "grid",
-            gridTemplateColumns: "20% 80%",
-            gridColumnGap: "0.4rem",
-            margin: "0",
-          }}
-        >
-          <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/sneezingwoman.png" />
+        <span className="main">
+          <img src={image1} />
           <ul>
             <li>
               There is currently no vaccine to prevent coronavirus disease 2019
@@ -55,15 +58,8 @@ class Preventions extends Component {
         <br />
         <h1>EveryOne Should</h1>
         <h3 style={{ marginLeft: "1rem" }}>Clean your hands often</h3>
-        <span
-          style={{
-            display: "grid",
-            gridTemplateColumns: "20% 80%",
-            gridColumnGap: "0.4rem",
-            margin: "0",
-          }}
-        >
-          <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/protect-wash-hands.png" />
+        <span className="main">
+          <img src={image2} />
           <ul>
             <li>
               <a href="https://www.cdc.gov/handwashing/when-how-handwashing.html">
@@ -89,15 +85,8 @@ class Preventions extends Component {
         </span>
         <br />
         <h3 style={{ marginLeft: "1rem" }}>Avoid close contact</h3>
-        <span
-          style={{
-            display: "grid",
-            gridTemplateColumns: "20% 80%",
-            gridColumnGap: "0.4rem",
-            margin: "0",
-          }}
-        >
-          <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/protect-quarantine.png" />
+        <span className="main">
+          <img src={image3} />
           <ul>
             <li>
               <strong>Avoid close contact</strong> with people who are sick
@@ -129,25 +118,21 @@ class Preventions extends Component {
             </li>
             <ul>
               <li>
-                <ul>
-                  <li>
-                    Remember that some people without symptoms may be able to
-                    spread virus.
-                  </li>
-                </ul>
+                <li>
+                  Remember that some people without symptoms may be able to
+                  spread virus.
+                </li>
               </li>
             </ul>
             <ul>
               <li>
-                <ul>
-                  <li>
-                    Keeping distance from others is especially important for{" "}
-                    <a href="/coronavirus/2019-ncov/need-extra-precautions/people-at-higher-risk.html">
-                      people who are at higher risk of getting very sick
-                    </a>
-                    .
-                  </li>
-                </ul>
+                <li>
+                  Keeping distance from others is especially important for{" "}
+                  <a href="/coronavirus/2019-ncov/need-extra-precautions/people-at-higher-risk.html">
+                    people who are at higher risk of getting very sick
+                  </a>
+                  .
+                </li>
               </li>
             </ul>
           </ul>
@@ -156,15 +141,8 @@ class Preventions extends Component {
         <h3 style={{ marginLeft: "1rem" }}>
           Cover your mouth and nose with a cloth face cover when around others
         </h3>
-        <span
-          style={{
-            display: "grid",
-            gridTemplateColumns: "20% 80%",
-            gridColumnGap: "0.4rem",
-            margin: "0",
-          }}
-        >
-          <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/prevent-getting-sick/cloth-face-cover.png" />
+        <span className="main">
+          <img src={image4} />
           <ul>
             <li>
               You could spread COVID-19 to others even if you do not feel sick.
@@ -195,15 +173,8 @@ class Preventions extends Component {
         </span>
         <br />
         <h3 style={{ marginLeft: "1rem" }}>Cover coughs and sneezes</h3>
-        <span
-          style={{
-            display: "grid",
-            gridTemplateColumns: "20% 80%",
-            gridColumnGap: "0.4rem",
-            margin: "0",
-          }}
-        >
-          <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/COVIDweb_06_coverCough.png" />
+        <span className="main">
+          <img src={image5} />
           <ul>
             <li>
               <strong>
@@ -226,15 +197,8 @@ class Preventions extends Component {
         </span>
         <br />
         <h3 style={{ marginLeft: "1rem" }}>Clean and disinfect</h3>
-        <span
-          style={{
-            display: "grid",
-            gridTemplateColumns: "20% 80%",
-            gridColumnGap: "0.4rem",
-            margin: "0",
-          }}
-        >
-          <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/COVIDweb_09_clean.png" />
+        <span className="main">
+          <img src={image6} />
           <ul>
             <li>
               <strong>
