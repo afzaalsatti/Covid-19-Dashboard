@@ -32,7 +32,6 @@ class SideDrawer extends Component {
           <NavLink to="/graph">Graph</NavLink>
           <NavLink to="/map">Map</NavLink>
           <NavLink to="/precautions">Precautions</NavLink>
-          <NavLink to="/about">About Us</NavLink>
         </div>
 
         <div id="main">

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Header from "./components/Layout/Header";
 import Chart from "./components/Chart/Chart";
 import Table from "./components/Table/Table";
+import MapBox from "../src/Component/Mapbox/MapBox";
 import Precautions from "./components/Preventions/Preventions";
 import Footer from "./components/Layout/Footer";
 
@@ -66,6 +67,13 @@ class App extends Component {
             path="/precautions"
             render={() => {
               return <Precautions darkMode={this.state.darkMode} />;
+            }}
+          />
+          <Route
+            exact
+            path="/map"
+            render={() => {
+              return <MapBox darkMode={this.state.darkMode} />;
             }}
           />
           <Footer />

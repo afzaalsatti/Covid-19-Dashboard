@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Spinner from "../Layout/Spinner";
 import { connect } from "react-redux";
-import { setHistory } from "../../actions/displayAction";
-import { Link } from "react-router-dom";
-import { setState } from "../../actions/displayAction";
+import { Link, Redirect } from "react-router-dom";
+import { setState, setHistory } from "../../actions/displayAction";
 
 import "./Table.css";
 
@@ -17,61 +16,40 @@ class Table extends Component {
     allData: [],
     filteredData: [],
     loading: true,
+    redirect: false,
   };
   componentDidMount() {
     if (Object.keys(this.props.state.tableState).length === 0) {
-      console.log(this.props.state);
-
-      axios.get("https://covid19api.herokuapp.com/").then((res) => {
-        let data = [];
-        res.data.confirmed.locations.forEach((l, index) => {
-          data.push({
-            country: l.country,
-            countryCode: l.country_code,
-            latitude: l.coordinates.latitude,
-            longitude: l.coordinates.longitude,
-            historyConfirmed: l.history,
-            latestConfirmed: l.latest,
-            historyDeaths: null,
-            latestDeaths: null,
-            historyRecovered: null,
-            latestRecovered: null,
+      let data = [];
+      axios
+        .get("https://api.thevirustracker.com/free-api?countryTotals=ALL")
+        .then((res) => {
+          let keys = Object.keys(res.data.countryitems[0]);
+          keys.forEach((l, index) => {
+            data.push({
+              country: res.data.countryitems[0][l].title,
+              countryCode: res.data.countryitems[0][l].code,
+              latestConfirmed: res.data.countryitems[0][l].total_cases,
+              latestDeaths: res.data.countryitems[0][l].total_deaths,
+              latestRecovered: res.data.countryitems[0][l].total_recovered,
+            });
           });
+          axios
+            .get("https://api.thevirustracker.com/free-api?global=stats")
+            .then((res) => {
+              let temp = [...data];
+              temp.splice(temp.length - 1, 1);
+              this.setState({
+                allData: temp,
+                filteredData: temp,
+                totalConfirmedLatest: res.data.results[0].total_cases,
+                totalDeathsLatest: res.data.results[0].total_deaths,
+                totalRecoveredLatest: res.data.results[0].total_recovered,
+                loading: false,
+              });
+              this.props.setState(this.state);
+            });
         });
-
-        res.data.deaths.locations.forEach((l) => {
-          data.forEach((d, index) => {
-            if (d.country === l.country) {
-              data[index] = {
-                ...d,
-                historyDeaths: l.history,
-                latestDeaths: l.latest,
-              };
-            }
-          });
-        });
-        res.data.recovered.locations.forEach((l) => {
-          data.forEach((d, index) => {
-            if (d.country === l.country) {
-              data[index] = {
-                ...d,
-                historyRecovered: l.history,
-                latestRecovered: l.latest,
-              };
-            }
-          });
-        });
-
-        this.setState({
-          totalConfirmedLatest: res.data.latest.confirmed,
-          totalDeathsLatest: res.data.latest.deaths,
-          totalRecoveredLatest: res.data.latest.recovered,
-          allData: data,
-          filteredData: data,
-          loading: false,
-        });
-        this.props.setState(this.state);
-      });
     } else {
       this.setState({
         ...this.props.state.tableState,
@@ -79,7 +57,32 @@ class Table extends Component {
     }
   }
   clickHandler = (data) => {
-    this.props.setHistory(data);
+    let historyConfirmed = {};
+    let historyDeaths = {};
+    let historyRecovered = {};
+    this.setState({ loading: true });
+    axios
+      .get(
+        `https://api.thevirustracker.com/free-api?countryTimeline=${data.countryCode}`
+      )
+      .then((res) => {
+        let keys = Object.keys(res.data.timelineitems[0]);
+        keys.forEach((k) => {
+          historyConfirmed[k] = res.data.timelineitems[0][k].total_cases;
+          historyDeaths[k] = res.data.timelineitems[0][k].total_deaths;
+          historyRecovered[k] = res.data.timelineitems[0][k].total_recoveries;
+        });
+        let params = {
+          historyConfirmed,
+          historyDeaths,
+          historyRecovered,
+          country: data.country,
+          countryCode: data.countryCode,
+        };
+        console.log(params);
+        this.props.setHistory(params);
+        this.setState({ loading: false, redirect: true });
+      });
   };
   changeHandler = (event) => {
     let filters = this.state.allData.filter((d) => {
@@ -138,7 +141,7 @@ class Table extends Component {
                     <td>{data.latestDeaths}</td>
                     <td>{data.latestRecovered}</td>
                     <td>
-                      <Link to="/graph" onClick={() => this.clickHandler(data)}>
+                      <Link onClick={() => this.clickHandler(data)}>
                         View Graph
                       </Link>
                     </td>
@@ -152,6 +155,7 @@ class Table extends Component {
     }
     return (
       <div className="Table-Main">
+        {this.state.redirect ? <Redirect to="/graph" /> : null}
         <div className="form-group">
           <input
             style={{ backgroundColor: "silver" }}
