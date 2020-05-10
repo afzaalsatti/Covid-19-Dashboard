@@ -60,6 +60,7 @@ class Table extends Component {
     let historyConfirmed = {};
     let historyDeaths = {};
     let historyRecovered = {};
+    let dailyConfirmedCases = {};
     this.setState({ loading: true });
     axios
       .get(
@@ -71,15 +72,16 @@ class Table extends Component {
           historyConfirmed[k] = res.data.timelineitems[0][k].total_cases;
           historyDeaths[k] = res.data.timelineitems[0][k].total_deaths;
           historyRecovered[k] = res.data.timelineitems[0][k].total_recoveries;
+          dailyConfirmedCases[k] = res.data.timelineitems[0][k].new_daily_cases;
         });
         let params = {
           historyConfirmed,
           historyDeaths,
           historyRecovered,
+          dailyConfirmedCases,
           country: data.country,
           countryCode: data.countryCode,
         };
-        console.log(params);
         this.props.setHistory(params);
         this.setState({ loading: false, redirect: true });
       });
@@ -156,16 +158,19 @@ class Table extends Component {
     return (
       <div className="Table-Main">
         {this.state.redirect ? <Redirect to="/graph" /> : null}
-        <div className="form-group">
-          <input
-            style={{ backgroundColor: "silver" }}
-            className="form-control"
-            placeholder="Search Country"
-            value={this.state.searchedCountry}
-            onChange={this.changeHandler}
-            autoFocus
-          />
-        </div>
+
+        <br />
+        <input
+          style={{
+            backgroundColor: "silver",
+            width: "35rem",
+          }}
+          className="form-control"
+          placeholder="Search Country"
+          value={this.state.searchedCountry}
+          onChange={this.changeHandler}
+          autoFocus
+        />
 
         {spinner}
         {table}

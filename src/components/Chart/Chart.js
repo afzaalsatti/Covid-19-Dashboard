@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Line as Bar } from "react-chartjs-2";
+import Line from "./Line";
 import { Link } from "react-router-dom";
 
 class Chart extends Component {
@@ -9,13 +9,13 @@ class Chart extends Component {
     confirmedCases: [],
     deathsCases: [],
     recoveredCases: [],
+    newDailyCases: [],
     show: false,
   };
   componentDidMount() {
     if (this.state.dates.length === 0) {
       this.setState({
         dates: [],
-        cases: [],
         show: false,
       });
 
@@ -28,6 +28,9 @@ class Chart extends Component {
       const recoveredValues = Object.values(
         this.props.history.historyRecovered
       );
+      const newDailyCases = Object.values(
+        this.props.history.dailyConfirmedCases
+      );
 
       for (let i = 0; i < keys.length; i++) {
         for (let j = i; j < keys.length; j++) {
@@ -36,6 +39,7 @@ class Chart extends Component {
             let temp2 = confirmedValues[i];
             let temp3 = deathsValues[i];
             let temp4 = recoveredValues[i];
+            let temp5 = newDailyCases[i];
             keys[i] = keys[j];
             keys[j] = temp1;
 
@@ -47,6 +51,9 @@ class Chart extends Component {
 
             recoveredValues[i] = recoveredValues[j];
             recoveredValues[j] = temp4;
+
+            newDailyCases[i] = newDailyCases[j];
+            newDailyCases[j] = temp5;
           }
         }
       }
@@ -56,15 +63,16 @@ class Chart extends Component {
         confirmedCases: confirmedValues,
         deathsCases: deathsValues,
         recoveredCases: recoveredValues,
+        newDailyCases: newDailyCases,
         show: true,
       });
     }
   }
 
   render() {
-    let bar = null;
+    let graph = null;
     if (this.state.dates.length > 0) {
-      bar = (
+      graph = (
         <div>
           <img
             src={`https://www.countryflags.io/${this.props.history.countryCode}/flat/64.png`}
@@ -74,72 +82,36 @@ class Chart extends Component {
           ) : (
             <p>{this.props.history.countryName}</p>
           )}
-          <Bar
-            data={{
-              labels: this.state.dates, //array
-              datasets: [
-                {
-                  label: "Confirmed",
-                  data: this.state.confirmedCases, //array
-                  borderColor: "blue",
-                  fill: false,
-                  borderWidth: 1,
-                },
-                {
-                  label: "Deaths",
-                  data: this.state.deathsCases, //array
-                  borderColor: "red",
-                  fill: false,
-                  borderWidth: 1,
-                },
-                {
-                  label: "Recovered",
-                  data: this.state.recoveredCases, //array
-                  borderColor: "green",
-                  fill: false,
-                  borderWidth: 1,
-                },
-              ],
-            }}
-            options={{
-              title: {
-                display: true,
-                text: "CORONA VIRUS COVID-19",
-                fontSize: 25,
-              },
-              scales: {
-                yAxes: [
-                  {
-                    gridLines: {
-                      zeroLineColor: this.props.darkMode
-                        ? "#B2BABB"
-                        : "#212F3D",
-                    },
-                  },
-                ],
-                xAxes: [
-                  {
-                    gridLines: {
-                      zeroLineColor: this.props.darkMode
-                        ? "#B2BABB"
-                        : "#212F3D",
-                    },
-                    ticks: {
-                      autoSkip: true,
-                      maxTicksLimit: 10,
-                    },
-                  },
-                ],
-              },
-            }}
+          <Line
+            labels={this.state.dates}
+            label="Daily Cases"
+            data={this.state.newDailyCases}
+            borderColor="#8E44AD"
+            darkMode={this.props.darkMode}
+            title={true}
+          />
+          <Line
+            labels={this.state.dates}
+            label="Confirmed"
+            data={this.state.confirmedCases}
+            borderColor="#2874A6"
+            darkMode={this.props.darkMode}
+          />
+          <Line
+            labels={this.state.dates}
+            label="Deaths"
+            data={this.state.deathsCases}
+            borderColor="#B03A2E"
+            darkMode={this.props.darkMode}
           />
         </div>
       );
     }
 
     return (
-      <div className="container" align="center">
-        {bar}
+      <div className="container">
+        <Link to="/">Back</Link>
+        <div align="center">{graph}</div>
       </div>
     );
   }

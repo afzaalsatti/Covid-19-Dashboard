@@ -7,6 +7,7 @@ const initialState = {
     historyConfirmed: {},
     historyDeaths: {},
     historyRecovered: {},
+    dailyConfirmedCases: {},
     countryCode: '',
     countryName: '',
     tableState: {}
@@ -20,6 +21,7 @@ const display = (state = initialState, action) => {
                 historyConfirmed: action.payload.historyConfirmed,
                 historyDeaths: action.payload.historyDeaths,
                 historyRecovered: action.payload.historyRecovered,
+                dailyConfirmedCases: action.payload.dailyConfirmedCases,
                 countryName: action.payload.country,
                 countryCode: action.payload.countryCode
             }
