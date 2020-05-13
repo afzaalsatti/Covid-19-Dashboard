@@ -104,6 +104,13 @@ class Chart extends Component {
             borderColor="#B03A2E"
             darkMode={this.props.darkMode}
           />
+          <Line
+            labels={this.state.dates}
+            label="Daily Recovered"
+            data={this.state.recoveredCases}
+            borderColor="green"
+            darkMode={this.props.darkMode}
+          />
         </div>
       );
     }
