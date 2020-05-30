@@ -4,7 +4,7 @@ import  ProgressBar  from "../ProgressBar/ProgressBar";
 const customStyles = {
   content : {
     top                   : '50%',
-    height:'32%',
+    height:'34%',
     width:'32%',
     left                  : '50%',
     right                 : 'auto',
@@ -103,7 +103,7 @@ export default function App(props){
 
           <form>
             
-          <button onClick={closeModal}style={{marginTop:20,top:3,right:10,borderRadius:5,position:'absolute'}}><i  className="fa fa-close"></i></button>
+          <button onClick={closeModal}style={{marginTop:10,top:3,right:10,borderRadius:5,position:'absolute'}}><i  className="fa fa-close"></i></button>
            
           </form>
         </Modal>
