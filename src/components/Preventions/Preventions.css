@@ -7,7 +7,82 @@
 .color-white {
     color: rgba(204, 209, 209, 0.7);
 }
+.instruction_head{
+    text-align: center;
+    margin-top: 10px;
+    background: #196EDE;
+    color: white;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+.image2{
+    background-image: url("../../assets/img/protect-wash-hands.png") !important;
 
+}
+.image3{
+    background-image: url("../../assets/img/protect-quarantine.png") !important;
+
+}
+.image4{
+    background-image: url("../../assets/img/cloth-face-cover.png") !important;
+
+}
+.image5{
+    background-image: url("../../assets/img/COVIDweb_06_coverCough.png") !important;
+
+}
+.image6{
+    background-image: url("../../assets/img/COVIDweb_09_clean.png") !important;
+
+}
+.subHeader {
+    float: left;
+    width: 100%;
+    margin-top: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+ul.checkmark li:before {
+    content:"\2713\0020";
+    list-style: none;
+}
+
+.text_heroo{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.83;
+    letter-spacing: .3px;
+    color: #34495e;
+    text-align: left;
+}
+.details_hero{
+    
+    font-size: 17px;
+    font-weight: bolder;
+    color: #1446a0;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: .3px;
+  
+   
+}
+.img1_Hero
+{
+    float: left;
+    margin: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/img/sneezingwoman.png");
+    width: 88px;
+    height: 88px;
+    background-size: contain;
+}
+ul.checkmark li {
+  
+    list-style: none;
+}
 
 @media screen and (min-width: 1000px) {
     .container {

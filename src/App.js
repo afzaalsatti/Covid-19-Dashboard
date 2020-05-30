@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import Header from "./components/Layout/Header";
+
 import Chart from "./components/Chart/Chart";
 import Table from "./components/Table/Table";
 import MapBox from "../src/Component/Mapbox/MapBox";
 import Precautions from "./components/Preventions/Preventions";
-import Footer from "./components/Layout/Footer";
+
 
 class App extends Component {
   state = {
@@ -26,7 +26,7 @@ class App extends Component {
         <div
           style={{ backgroundColor: this.state.darkMode ? "black" : "white" }}
         >
-          <Header />
+          {/* <Header /> */}
           <div
             class="custom-control custom-switch"
             style={{ position: "sticky", float: "right", marginRight: "1rem" }}
@@ -76,7 +76,7 @@ class App extends Component {
               return <MapBox darkMode={this.state.darkMode} />;
             }}
           />
-          <Footer />
+          
         </div>
       </Router>
     );

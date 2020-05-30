@@ -34,6 +34,8 @@ class Table extends Component {
               latestRecovered: res.data.countryitems[0][l].total_recovered,
             });
           });
+
+          data.sort(function(a, b){return b.latestConfirmed - a.latestConfirmed});
           axios
             .get("https://api.thevirustracker.com/free-api?global=stats")
             .then((res) => {
@@ -130,7 +132,7 @@ class Table extends Component {
                     {this.state.totalRecoveredLatest}
                   </span>
                 </th>
-                <th scope="col">Graph</th>
+                <th scope="col">Visualization</th>
               </tr>
             </thead>
             <tbody>
@@ -144,7 +146,7 @@ class Table extends Component {
                     <td>{data.latestRecovered}</td>
                     <td>
                       <Link onClick={() => this.clickHandler(data)}>
-                        View Graph
+                        Visualize
                       </Link>
                     </td>
                   </tr>
@@ -163,7 +165,8 @@ class Table extends Component {
         <input
           style={{
             backgroundColor: "silver",
-            width: "35rem",
+            width: "60%",
+            margin:"auto"
           }}
           className="form-control"
           placeholder="Search Country"

@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.13",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
     "cheerio": "^1.0.0-rc.3",
     "git": "^0.1.5",
@@ -22,12 +24,15 @@
     "react-map-gl": "^5.2.3",
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.0",
+    "react-responsive-carousel": "^3.2.7",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-sidebar": "^3.0.2",
     "react-step-progress-bar": "^1.0.3",
     "redux": "^4.0.5",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "run": "^1.4.0",
+    "typeface-poppins": "0.0.72"
   },
   "scripts": {
     "start": "react-scripts start",

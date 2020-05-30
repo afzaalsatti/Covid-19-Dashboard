@@ -35,6 +35,8 @@ export default class Map extends React.Component {
   }
 
   componentWillMount() {
+
+   
     let data = [];
     axios
       .get("https://api.thevirustracker.com/free-api?countryTotals=ALL")
