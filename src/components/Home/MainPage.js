@@ -134,7 +134,7 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>
 
    
    render(){
-     
+     document.title = 'Coronavirus Dashboard';
       return(
 
         <div className={ this.state.darkMode? "rightDark " : "right " }style={{height:"100%",width:"100%"}}>
