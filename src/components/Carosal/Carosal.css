@@ -1,10 +1,9 @@
-.slider{
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-width: 900px;
-height: 400px;
-margin: 0 auto;
+.slider {
+    position: absolute;
+    margin: 0 auto;
+}
+
+img {
+    height: 60vh;
+    /* object-fit: cover; */
 }
