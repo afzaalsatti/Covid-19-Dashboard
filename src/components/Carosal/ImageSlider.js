@@ -4,11 +4,11 @@ import '../Carosal/Carosal.css';
 
 export default () => (
   <Carousel autoPlay>
-     <div>
-      <img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR4DbaierSMdwryeWtFXyPWy-uHgNQYuoe_N1mVxRejS3TQRs7C&usqp=CAU" style={{width:'50%'}}/>
-      {/* <img alt="" src="https://images.unsplash.com/photo-1580377968109-634820edeb84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}}/>
+      <div>
+      <img alt="" src="https://images.unsplash.com/photo-1580377968191-7aad5ea3822a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}}/>
+      <img alt="" src="https://images.unsplash.com/photo-1580377968109-634820edeb84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}}/>
+    
       <button className="legend">Wash your hands for at least 20 seconds</button>
-     */}
     </div>
     <div>
       <img alt="" src="https://images.unsplash.com/photo-1442504028989-ab58b5f29a4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}} />
@@ -16,12 +16,7 @@ export default () => (
       */}
       <button className="legend">Avoid Crowded places</button>
     </div>
-    <div>
-      <img alt="" src="https://images.unsplash.com/photo-1580377968191-7aad5ea3822a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}}/>
-      <img alt="" src="https://images.unsplash.com/photo-1580377968109-634820edeb84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}}/>
-    
-      <button className="legend">Wash your hands for at least 20 seconds</button>
-    </div>
+   
     <div>
     <img alt="" src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}}/>
       {/* <img alt="" src="https://images.unsplash.com/photo-1585828292920-638a2a78cb38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:'50%'}}/>

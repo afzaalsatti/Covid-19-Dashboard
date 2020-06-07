@@ -8,43 +8,31 @@ import Precautions from "./components/Preventions/Preventions";
 
 
 class App extends Component {
-  state = {
-    darkMode: false,
-  };
-  onChangeHandler = () => {
-    this.setState((prevState) => {
-      return {
-        darkMode: !prevState.darkMode,
-      };
-    });
-  };
+  constructor(props){
+    super(props);
+   
+
+
+   
+
+  }
+  
+
 
   render() {
     return (
       <Router>
         <Redirect to="/" />
         <div
-          style={{ backgroundColor: this.state.darkMode ? "black" : "white" }}
+          style={{ backgroundColor: this.props.darkMode ? "black" : "white" }}
         >
           {/* <Header /> */}
           <div
             class="custom-control custom-switch"
             style={{ position: "sticky", float: "right", marginRight: "1rem" }}
           >
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customSwitch1"
-              onChange={this.onChangeHandler}
-              placeholder="Dark"
-            />
-            <label
-              className="custom-control-label"
-              htmlFor="customSwitch1"
-              style={{ color: "#777" }}
-            >
-              {this.state.darkMode ? "Dark Mode" : "Light Mode"}
-            </label>
+           
+            
             <br />
             <br />
           </div>
@@ -52,28 +40,28 @@ class App extends Component {
             exact
             path="/"
             render={() => {
-              return <Table darkMode={this.state.darkMode} />;
+              return <Table darkMode={this.props.darkMode} />;
             }}
           />
           <Route
             exact
             path="/graph"
             render={() => {
-              return <Chart darkMode={this.state.darkMode} />;
+              return <Chart darkMode={this.props.darkMode} />;
             }}
           />
           <Route
             exact
             path="/precautions"
             render={() => {
-              return <Precautions darkMode={this.state.darkMode} />;
+              return <Precautions darkMode={this.props.darkMode} />;
             }}
           />
           <Route
             exact
             path="/map"
             render={() => {
-              return <MapBox darkMode={this.state.darkMode} />;
+              return <MapBox darkMode={this.props.darkMode} />;
             }}
           />
           

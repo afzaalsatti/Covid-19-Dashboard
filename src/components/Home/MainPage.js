@@ -19,22 +19,37 @@ this.toggleSlideMenu=this.toggleSlideMenu.bind(this);
 
 this.getMenuSelection=this.getMenuSelection.bind(this);
 this.buttonActionListener=this.buttonActionListener.bind(this);
-this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
+this.state={component:<Home passedFunction={this.buttonActionListener}></Home>
+,darkMode: false};
 
     }
 
-   
+    onChangeHandler = () => {
+      
+        this.setState((prevState) => {
+          return {
+            darkMode: !prevState.darkMode,
+            
+            
+          };
+        });
+
+
+        
+            
+
+      };
     
     buttonActionListener(target){
        
         if(target.target.id==="btn1")
         {
             this.setState({
-                component:<Stats ></Stats>
+                component:<Stats darkMode={this.state.darkMode} ></Stats>
             });
         }else{
             this.setState({
-                component:<Precautions ></Precautions>
+                component:<Precautions darkMode={this.state.darkMode} ></Precautions>
             });
        }
 
@@ -61,7 +76,7 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
        
          if(pageToBeLoaded==="home")
          {
-            if(this.state.component !== <Home></Home>)
+            if(this.state.component.type.name !== "home")
             {
                 this.setState({
                     component:<Home passedFunction={this.buttonActionListener}></Home>
@@ -74,11 +89,11 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
          else if(pageToBeLoaded==="Precautions")
          {
              
-            if(this.state.component !== <Precautions ></Precautions>)
+            if(this.state.component !== <Precautions darkMode={this.state.darkMode} ></Precautions>)
              {
 
                  this.setState({
-                     component:<Precautions ></Precautions>
+                     component:<Precautions darkMode={this.state.darkMode}  ></Precautions>
                  });
              }
 
@@ -91,7 +106,7 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
              {
 
                  this.setState({
-                     component:<Stats ></Stats>
+                     component:<Stats darkMode={this.state.darkMode} ></Stats>
                  });
              }
 
@@ -122,9 +137,10 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
      
       return(
 
-        <div style={{height:"100%",width:"100%"}}>
+        <div className={ this.state.darkMode? "rightDark " : "right " }style={{height:"100%",width:"100%"}}>
 
-<div className="topbar" >
+<div className={ this.state.darkMode? "topbarDark" : "topbar" }  >
+  
 <svg className="translate" style={{marginLeft:"15px"}} onClick={this.toggleSlideMenu} xmlns="http://www.w3.org/2000/svg"  height="24" viewBox="0 0 24 24" width="24" fill="white"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
 
   <div className="translateText"><text>Covid-19 Dashboard</text> </div>
@@ -134,16 +150,18 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
 
 
 
-
+ 
 
   </div>
+
+       
         <div  >
             
-            <div id="right" className="shadow-lg p-3 mb-5 bg-white rounded"  style={{display: 'none'}}>
-            <ul className="home-nav-ul" >
+            <div className={ this.state.darkMode? "rightDark shadow-lg p-3 mb-5 rounded" : "right shadow-lg p-3 mb-5 rounded" } id="right"  style={{display: 'none'}}>
+            <ul className={ this.state.darkMode? "home-nav-ulDark" : "home-nav-ul" }  >
 
                 
-                <li className="home-nav-item" onClick={() => this.getMenuSelection("home")}>
+                <li  className={ this.state.darkMode? "home-nav-itemDark" : "home-nav-item" } onClick={() => this.getMenuSelection("home")}>
                 <img  style={{height:"25px",width:"25px"}}src="/assets/home_icon.png">
                 </img>   
                   <span >
@@ -151,7 +169,7 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
                     </span>
                 </li>
 
-                <li className="home-nav-item" onClick={() => this.getMenuSelection("Stats")}>
+                <li   className={ this.state.darkMode? "home-nav-itemDark" : "home-nav-item" } onClick={() => this.getMenuSelection("Stats")}>
                 <img style={{height:"25px",width:"25px"}} src="/assets/stats_icon.png">
                 </img>   
                 <span>
@@ -161,7 +179,7 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
 
 
                </li>
-              <li className="home-nav-item" onClick={() => this.getMenuSelection("Map")}>
+              <li className={ this.state.darkMode? "home-nav-itemDark" : "home-nav-item" } onClick={() => this.getMenuSelection("Map")}>
 
 
 
@@ -170,24 +188,53 @@ this.state={component:<Home passedFunction={this.buttonActionListener}></Home>};
                        Map
                     </span>
                 </li>
-                <li className="home-nav-item" onClick={() => this.getMenuSelection("Precautions")}>
+                <li className={ this.state.darkMode? "home-nav-itemDark" : "home-nav-item" } onClick={() => this.getMenuSelection("Precautions")}>
                 <img style={{height:"25px",width:"25px"}} src="/assets/precaution_icon.png">
                 </img>         <span>
                         Precautions
                     </span>
+                </li>
+                <li>
+                <div
+            class="custom-control custom-switch"
+            style={{ marginLeft:"18px" }}
+          >
+            <input
+              type="checkbox"
+              className="custom-control-input"
+              id="customSwitch1"
+              onChange={this.onChangeHandler}
+              placeholder="Dark"
+            />
+            <label
+              className="custom-control-label"
+              htmlFor="customSwitch1"
+              style={{ color: "#777" }}
+            >
+              {this.state.darkMode ? "Dark Mode" : "Light Mode"}
+            </label>
+            <br />
+            <br />
+          </div>
+  
                 </li>
                      </ul>
         </div>
         </div>
         <div className="left">
         
-        
-{this.state.component}
+        {  this.state.component.type.name==="App"?  <Stats darkMode={this.state.darkMode}  ></Stats> 
+         : this.state.component.type.name==="Preventions"?<Precautions darkMode={this.state.darkMode}  ></Precautions>
+         : 
+       
+           this.state.component}
+
 
         
         </div>
 
-{ (this.state.component.type !== MapBox) ? <Footer id="footer"></Footer>  :  "" }
+{ (this.state.component.type !== MapBox) ? <Footer id="footer" darkMode={this.state.darkMode
+}></Footer>  :  "" }
 
 
         

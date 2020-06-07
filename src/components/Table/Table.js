@@ -166,7 +166,8 @@ class Table extends Component {
           style={{
             backgroundColor: "silver",
             width: "60%",
-            margin:"auto"
+            margin:"auto",
+            marginBottom:"10px"
           }}
           className="form-control"
           placeholder="Search Country"

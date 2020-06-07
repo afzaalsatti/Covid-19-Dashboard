@@ -20,6 +20,7 @@
     float:left;
      transition: visibility 0s linear 0.33s
 }
+
 .translate{
    transform: translateY(+40%);
 }
@@ -71,6 +72,20 @@ position: absolute;
 
 
 }
+.topbarDark{
+   position: -webkit-sticky; /* Safari */
+   position: sticky;
+   top: 0;
+   z-index: 1;
+}
+.topbarDark{
+   display: flex;
+   height: 50px;
+   background: #2e2f31;
+ 
+   color: white;
+  
+}
 .topbar{
    position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -108,7 +123,7 @@ padding-right: 8px;
 }
 .topbar{
    display: flex;
-   height: 45px;
+   height: 50px;
    background: #196EDE;
  
    color: white;
@@ -138,32 +153,40 @@ padding-right: 8px;
  
    
 }
-.home-nav-item span{
-   margin-left: 10px;
-}
-#subMenu li{
-   margin-top: 10px;
+
+.home-nav-ulDark {
    list-style: none;
+   display: contents;
+   background: #2e2f31;
+
+}
+
+ .right{
+   background:white;
+ }
+ .rightDark{
+   background: #343A40;
+ }
+.home-nav-ulDark  :HOVER {
+   background: #000;
+   color: white;
+}
+.home-nav-itemDark{
    width: 100%;
-   background: white;
+   background: #343A40;
    height: 50px;
-   
-  padding-top: 5%;
+   margin-bottom: 5px;
+   padding-top: 5%;
    border-radius: 7%;
-   margin-top: 10px;
+   margin-top: 5px;
    cursor: pointer;
    padding-left: 15px;
-   color: #707172;
-   font-family: poppins;
+  color: grey;
+  font-family: poppins;
+ 
    
-
-
 }
-#subMenu span{
+.home-nav-itemDark span{
    margin-left: 10px;
-   
 }
-#subMenu :hover{
-   background: #EBEBEB;
-   color: black;
-}
+

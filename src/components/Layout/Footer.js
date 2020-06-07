@@ -6,12 +6,12 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <footer style={{    background: "#196ede",
+        <footer style={{background: this.props.darkMode ? "#343A40" : "#196ede",
     height: "auto",
     borderRadius: "8px",fontFamily:"poppins",margin:"0px"}} className=" text-white mt-5 p-4 text-center">
           Copyright &copy; {new Date().getFullYear()} DSC-IIUI
-         <div className="col-lg-12" style={{borderRadius:"10px",background:"#196ede"}}>
-  <ul className="social-network social-circle">
+         <div tyle={{background: this.props.darkMode ? "#343A40" : "#196ede",borderRadius:"10px"}}className="col-lg-12" >
+  <ul s className="social-network social-circle">
     <li><a href="#" className="icoRss" title="Rss"><i className="fa fa-rss" /></a></li>
     <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook" /></a></li>
     <li><a href="#" className="icoTwitter" title="Twitter"><i className="fa fa-twitter" /></a></li>

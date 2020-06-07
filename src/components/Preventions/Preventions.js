@@ -5,6 +5,10 @@ import "./Preventions.css";
 import 'typeface-poppins'
 
 class Preventions extends Component {
+  constructor(props){
+    super(props);
+   
+  }
   render() {
     return (
     
@@ -15,7 +19,7 @@ class Preventions extends Component {
             : "container styling"
         }
       >
-        <h2 className="instruction_head">Seafty and Symptoms</h2>
+        <h2 className={ this.props.darkMode? " instruction_head instruction_headDark" : "instruction_head" } >Seafty and Symptoms</h2>
       
       <div style={{    width: "100%",
     
@@ -28,7 +32,7 @@ class Preventions extends Component {
         ></iframe>
       
       </div>
-              <div className="promiseMain" style={{display:"flow-root",minHeight:"520px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
+              <div className={ this.props.darkMode? " promiseMain promiseMainDark" : "promiseMain" } style={{display:"flow-root",minHeight:"520px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
                 <div className="header" style={{minHeight: "120px"}}>
                   <div className="img1_Hero" style={{backgroundImage:"../../assets/img/sneezingwoman.png"}} />
                   <span className="fl">
@@ -95,13 +99,13 @@ class Preventions extends Component {
              
                 </div> 
               </div>
-              <h2 className="instruction_head">Your Responsibilities</h2>
+              <h2  className={ this.props.darkMode? " instruction_head instruction_headDark" : "instruction_head" } >Your Responsibilities</h2>
 
          
               
 
 
-              <div className="promiseMain" style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
+              <div className={ this.props.darkMode? "promiseMainDark" : "promiseMain" } style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
                 <div className="header" style={{minHeight: "120px"}}>
                   <div className="img1_Hero image2" style={{backgroundImage:"../../assets/img/sneezingwoman.png"}} />
                   <span className="fl">
@@ -130,17 +134,17 @@ class Preventions extends Component {
               
                 </div>
                 <div style={{marginTop:"10px",textAlign:"center" ,  float:"left",minHeight: "70px"}} className="details_hero  col-lg-4 col-md-6 col-sm-12 col-xs-12">  If soap and water are not readily available,{" "}
-              <strong>
+              
                 use a hand sanitizer that contains at least 60% alcohol
-              </strong>
+              
               . Cover all surfaces of your hands and rub them together until
               they feel dry.
                 </div>
                 
               
                 <div className=" col-lg-4 col-md-6 col-sm-12 col-xs-12" style={{marginTop:"10px",textAlign:"center", float:"left", minHeight: "200px"}}>
-                <div  className="details_hero" > <strong>Avoid touching</strong>{" "}
-              <strong>your eyes, nose, and mouth</strong> with unwashed hands. </div>
+                <div  className="details_hero" > Avoid touching{" "}
+              your eyes, nose, and mouth with unwashed hands. </div>
                
                
                   <div style={{textAlign:"center"}}className="text_heroo">
@@ -157,7 +161,7 @@ class Preventions extends Component {
 
         
 
-<div className="promiseMain" style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
+<div className={ this.props.darkMode? "promiseMainDark" : "promiseMain" } style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
                 <div className="header" style={{minHeight: "120px"}}>
                   <div className="img1_Hero image3" style={{backgroundImage:"../../assets/img/sneezingwoman.png"}} />
                   <span className="fl">
@@ -177,7 +181,7 @@ class Preventions extends Component {
 <div className="justify-content-md-center" style={{textAlign:"center",width:"100%"}}>
 
                   <div style={{marginTop:"10px",textAlign:"center" ,  float:"left",minHeight: "70px"}} className="details_hero  col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                  <strong>Avoid close contact</strong> with people who are sick
+                  Avoid close contact with people who are sick
               
                 </div>
                 <div style={{marginTop:"10px",textAlign:"center" ,  float:"left",minHeight: "70px"}} className="details_hero  col-lg-4 col-md-6 col-sm-12 col-xs-12">  If soap and water are not readily available,{" "}
@@ -187,7 +191,7 @@ class Preventions extends Component {
                 className="tp-link-policy"
                 data-domain-ext="gov"
               >
-                <strong>Stay home as much as possible</strong>.
+                Stay home as much as possible.
                 <span className="sr-only">pdf icon</span>
                 <span
                   className="fi cdc-icon-pdf x16 fill-pdf"
@@ -204,8 +208,8 @@ class Preventions extends Component {
                 
               
                 <div className=" col-lg-4 col-md-6 col-sm-12 col-xs-12" style={{marginTop:"10px",textAlign:"center", float:"left", minHeight: "200px"}}>
-                <div  className="details_hero" >  Put <strong>distance between yourself and other</strong>{" "}
-              <strong>people</strong>. </div>
+                <div  className="details_hero" >  Put distance between yourself and other{" "}
+              people. </div>
                
                
                   <div style={{textAlign:"center"}}className="text_heroo">
@@ -234,7 +238,7 @@ class Preventions extends Component {
               </div>
      
 
-<div className="promiseMain" style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
+<div className={ this.props.darkMode? "promiseMainDark" : "promiseMain" } style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
                 <div className="header" style={{minHeight: "120px"}}>
                   <div className="img1_Hero image4" style={{backgroundImage:"../../assets/img/sneezingwoman.png"}} />
                   <span className="fl">
@@ -307,7 +311,7 @@ class Preventions extends Component {
                 </div> 
               </div>
 
-        <div className="promiseMain" style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
+        <div className={ this.props.darkMode? "promiseMainDark" : "promiseMain" }  style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
                 <div className="header" style={{minHeight: "120px"}}>
                   <div className="img1_Hero image5" style={{backgroundImage:"../../assets/img/sneezingwoman.png"}} />
                   <span className="fl">
@@ -327,21 +331,21 @@ class Preventions extends Component {
 <div className="justify-content-md-center" style={{textAlign:"center",width:"100%"}}>
 
                   <div style={{marginTop:"10px",textAlign:"center" ,  float:"left",minHeight: "70px"}} className="details_hero  col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                  <strong>
+                  
                 If you are in a private setting and do not have on your cloth
                 face covering, remember to always cover your mouth and nose
-              </strong>{" "}
+              {" "}
               with a tissue when you cough or sneeze or use the inside of your
               elbow.     </div>
                 <div style={{marginTop:"10px",textAlign:"center" ,  float:"left",minHeight: "70px"}} className="details_hero  col-lg-4 col-md-6 col-sm-12 col-xs-12">  If soap and water are not readily available,{" "}
-                <strong>Throw used tissues</strong> in the trash.
+                Throw used tissues in the trash.
              
               
                 </div>
                 
               
                 <div className=" col-lg-4 col-md-6 col-sm-12 col-xs-12" style={{marginTop:"10px",textAlign:"center", float:"left", minHeight: "200px"}}>
-                <div  className="details_hero" >Immediately <strong>wash your hands</strong> with soap and water
+                <div  className="details_hero" >Immediately wash your hands with soap and water
               for at least 20 seconds. If soap and water are not readily
               available, clean your hands with a hand sanitizer that contains at
               least 60% alcohol. </div>
@@ -354,7 +358,7 @@ class Preventions extends Component {
               </div>
 
        
-            <div className="promiseMain" style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
+            <div className={ this.props.darkMode? "promiseMainDark" : "promiseMain" } style={{display:"flow-root",minHeight:"320px",width:"auto", height:"auto" ,marginTop:"20px",  borderRadius: "10px"}}>
                 <div className="header" style={{minHeight: "120px"}}>
                   <div className="img1_Hero image6" style={{backgroundImage:"../../assets/img/sneezingwoman.png"}} />
                   <span className="fl">
@@ -374,17 +378,17 @@ class Preventions extends Component {
 <div className="justify-content-md-center" style={{textAlign:"center",width:"100%"}}>
 
                   <div style={{marginTop:"10px",textAlign:"center" ,  float:"left",minHeight: "70px"}} className="details_hero  col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                  <strong>
+                  
                 Clean AND disinfect{" "}
                 <a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/cleaning-disinfection.html">
                   frequently touched surfaces
                 </a>
                 &nbsp;daily
-              </strong>
+              
               . This includes tables, doorknobs, light switches, countertops,
               handles, desks, phones, keyboards, toilets, faucets, and sinks.    </div>
                 <div style={{marginTop:"10px",textAlign:"center" ,  float:"left",minHeight: "70px"}} className="details_hero  col-lg-4 col-md-6 col-sm-12 col-xs-12">  If soap and water are not readily available,{" "}
-                <strong>If surfaces are dirty, clean them:</strong> Use detergent
+                If surfaces are dirty, clean them: Use detergent
               or soap and water prior to disinfection.
              
               
