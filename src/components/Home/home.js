@@ -106,7 +106,7 @@ export default class home extends Component {
             <br></br>
 
  
-            <div style={{marginTop:"180px"}}className="main_body">
+            <div style={{marginTop:"130px"}}className="main_body">
               
       
                   <div style={{marginRight:"18px",marginBottom:"18px",float:"left"}}>
