@@ -75,6 +75,10 @@ class Chart extends Component {
       graph = (
         <div>
           <img
+            style={{
+              width: "85px",
+              height: "80px",
+            }}
             src={`https://www.countryflags.io/${this.props.history.countryCode}/flat/64.png`}
           ></img>
           {this.props.darkMode ? (

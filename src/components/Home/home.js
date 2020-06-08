@@ -73,7 +73,7 @@ export default class home extends Component {
               <button
                 onClick={this.props.passedFunction}
                 id="btn1"
-                className=" search_btn fl button"
+                className="search_btn fl button"
               >
                 International Cases Details
               </button>
