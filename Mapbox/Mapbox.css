@@ -1,0 +1,436 @@
+.maindiv {
+    height: 100vh;
+    background-Color: #757e7a;
+    width: 18%;
+    position: absolute;
+}
+
+.Navigation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px
+}
+.worldRecordDefination{
+    color: #FFFF66;
+      font-size: 16px;
+}
+
+.MapStyle {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.MapSelectedStyle {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.worldRecord {
+    color: #5fa486;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: bold
+}
+
+.WorldInfoHeading {
+    color: white;
+    margin-Top: 15px;
+    margin-Bottom: 10px;
+    font-size: 11px
+}
+
+.Map {
+    position: absolute;
+    left: 20%
+}
+
+@media all and (min-width:360px) {
+    .Map {
+        position: absolute;
+        left: 26%
+    }
+    .img {
+        height: 30px;
+        width: 40px
+    }
+    .toggalViews {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: #D3D3D3
+    }
+
+    .toggalViews1 {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: black
+    }
+
+    .maindiv {
+        height: 100vh;
+        background-Color: #182f25;
+        width: 100px;
+        position: absolute;
+
+
+    }
+    .worldRecordDefination{
+        color: #FFFF66;
+        font-size: 14px;
+    }
+    .worldRecord {
+        color: #5fa486;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: bold
+    }
+}
+
+@media all and (min-width:480px) {}
+
+@media all and (min-width:411px) {
+    .Map {
+        position: absolute;
+        left: 26%
+    }
+
+    .maindiv {
+        height: 100vh;
+        background-Color: #182f25;
+        width: 100px;
+        position: absolute;
+
+
+    }
+    .toggalViews {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: #D3D3D3
+    }
+
+    .toggalViews1 {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: black
+    }
+
+    .img {
+        height: 30px;
+        width: 40px
+    }
+    .worldRecordDefination{
+        color: #FFFF66;
+        font-size: 14px;
+    }
+    .WorldInfoHeading {
+        color: white;
+        margin-Top: 15px;
+        margin-Bottom: 10px;
+        font-size: 14px
+    }
+
+    .worldRecord {
+        color: #5fa486;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: bold
+    }
+}
+
+@media all and (min-width:320px) {
+    .Map {
+        position: absolute;
+        left: 26%
+    }
+
+    .maindiv {
+        height: 100vh;
+        background-Color: #182f25;
+        width: 95px;
+        position: absolute;
+
+
+    }
+    .img {
+        height: 30px;
+        width: 40px
+    }
+    .toggalViews {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: #D3D3D3
+    }
+
+    .toggalViews1 {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: black
+    }
+
+    .worldRecordDefination{
+        color: #FFFF66;
+        font-size: 14px;
+    }
+
+    .WorldInfoHeading {
+        color: white;
+        margin-Top: 15px;
+        margin-Bottom: 10px;
+        font-size: 14px
+    }
+
+    .worldRecord {
+        color: #5fa486;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 11px;
+        font-weight: bold
+    }
+}
+
+@media all and (min-width:375px) {
+    .Map {
+        position: absolute;
+        left: 25%
+    }
+
+    .maindiv {
+        height: 100vh;
+        background-Color: #182f25;
+        width: 105px;
+        position: absolute;
+
+
+    }
+    .img {
+        height: 30px;
+        width: 40px
+    }
+    .toggalViews {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: #D3D3D3
+    }
+
+    .toggalViews1 {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: black
+    }
+
+.worldRecordDefination{
+    color: #FFFF66;
+    font-size: 14px;
+}
+    .WorldInfoHeading {
+        color: white;
+        margin-Top: 15px;
+        margin-Bottom: 10px;
+        font-size: 16px
+    }
+
+    .worldRecord {
+        color: #5fa486;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 11px;
+        font-weight: bold
+    }
+}
+
+@media (min-width:768px) {
+    .Map {
+        position: absolute;
+        left: 20%
+    }
+
+    .maindiv {
+        height: 100vh;
+        background-Color: #182f25;
+        width: 20%;
+        position: absolute;
+
+
+    }
+    .worldRecordDefination{
+        color: #FFFF66;
+         font-Size: 18px
+    }
+
+    .worldRecord {
+        color: #5fa486;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 32px;
+        font-weight: bold
+    }
+
+    .WorldInfoHeading {
+        color: white;
+        margin-Top: 15px;
+        margin-Bottom: 10px;
+        font-size: 24px
+    }
+}
+
+@media (min-width:1024px) {
+    .Map {
+        position: absolute;
+        left: 16%
+    }
+
+    .maindiv {
+        height: 100vh;
+        /*  background-Color:#182f25; */
+        background-Color: #2B2E2F;
+        width: 16%;
+        position: absolute;
+        border-bottom-right-radius: 10;
+
+
+    }
+    .worldRecordDefination{
+        color: #FFFF66;
+         font-Size: 22px
+    }
+    @keyframes example {
+        0% {
+            left: 0px;
+            top: 0px;
+        }
+
+        25% {
+            left: 15px;
+            top: 0px;
+        }
+
+        50% {
+            left: 15px;
+            top: 15px;
+        }
+
+        75% {
+            left: 0px;
+            top: 20px;
+        }
+
+        100% {
+            background-color: green;
+            left: 0px;
+            top: 0px;
+        }
+    }
+
+    .img {
+        height: 30px;
+        width: 50px
+    }
+
+    .SettingIcon {
+        position: absolute;
+        top: 10px;
+        left: 10px
+    }
+
+    .toggalViews {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: #D3D3D3
+    }
+
+    .toggalViews1 {
+        position: absolute;
+        top: 55px;
+        left: 38px;
+        width: 200px;
+        align-self: 'flex-end';
+        border-width: 2px;
+        border-radius: 10px;
+        border-color: red;
+        background-color: black
+    }
+
+    .worldRecord {
+        color: #5fa486;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 32px;
+        font-weight: bold;
+
+    }
+
+    .WorldInfoHeading {
+        color: white;
+        margin-Top: 15px;
+        margin-Bottom: 10px;
+        border-radius: 10px;
+        /* border-width: 2; */
+        /* background-color: green; */
+        font-size: 21px;
+        position: relative;
+        font-style: italic;
+        animation-name: example;
+        animation-duration: 4s;
+    }
+
+}
+
