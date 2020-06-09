@@ -44,7 +44,7 @@ export default class Demo extends Component {
 
         return (
             <div style={{marginTop: 50}}>
-                <h4>
+                <div>
                     <AnimatedNumber
                         style={{
                             transition: '0.8s ease-out',
@@ -59,7 +59,7 @@ export default class Demo extends Component {
                         duration={1600}
                         formatValue={n => ` ${n} ` 
                            }/>
-                </h4>
+                </div>
                 
              
             </div>

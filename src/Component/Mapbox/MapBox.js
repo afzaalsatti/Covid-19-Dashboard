@@ -65,15 +65,12 @@ export default class Map extends React.Component {
               `https://api.mapbox.com/geocoding/v5/mapbox.places/${data.country}.json?access_token=pk.eyJ1IjoibWVoYWtraGFuIiwiYSI6ImNrOHN5MTd3ZzAwamgzb29ic3EybWhuZWkifQ.B7TChUzxCD7J_RQZLqFxsg`
             )
             .then((response) => {
-              // data.coordinates='test'
+             
               requestResponseData[i] = data;
 
               requestResponseData[i].coordinates =
                 response.data.features[0].center;
 
-              //  console.log(JSON.stringify(data))
-
-              // console.log("Result",data.Coordinates)
             })
         );
         axios
@@ -81,7 +78,6 @@ export default class Map extends React.Component {
           .then((res) => {
             let temp = [...data];
 
-            // temp.splice(temp.length - 1, 1);
             this.setState({
               allData: temp,
               filteredData: temp,
@@ -94,13 +90,7 @@ export default class Map extends React.Component {
       });
   }
 
-  // componentDidUpdate() {
-  //   if (requestResponseData.length > 0 && requestResponseData.length < 183) {
-  //     this.setState({
-  //       allData: requestResponseData,
-  //     });
-  //   }
-  // }
+
   render() {
     if (this.state.mapview === 1) {
       return (

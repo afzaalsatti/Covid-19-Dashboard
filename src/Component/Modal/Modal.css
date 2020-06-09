@@ -1,0 +1,159 @@
+    
+        .ModalBox{
+            top                   : 50%;
+            height:34%;
+            width:32%;
+            left                  : 50%;
+            right                 : auto;
+            bottom                : auto;
+            margin-right           : -50%;
+            transform             : translate(-50%, -50%);
+            border-radius:10;
+            background:black;
+            border: 1px solid #d0cccc;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            transition: all .8s;
+
+          }
+       
+  
+    
+   
+    
+   
+    
+    @media all and (min-width:360px) {
+        
+        .ModalBox{
+            top                   : 50%;
+            height                : 15%;
+            width                  :20%;
+            left                  : 50%;
+            right                 : auto;
+            bottom                : auto;
+            margin-right           : -50%;
+            transform             : translate(-50%, -50%);
+            border-radius:10;
+            background:black;
+            border: 1px solid #d0cccc;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            transition: all .8s;
+          }
+       
+        
+    }
+    
+    @media all and (min-width:480px) {}
+    
+    @media all and (min-width:411px) {
+      
+        .ModalBox{
+            top                   : 50%;
+            height                : 15%;
+            width                  :20%;
+            left                  : 50%;
+            right                 : auto;
+            bottom                : auto;
+            margin-right           : -50%;
+            transform             : translate(-50%, -50%);
+            border-radius:10;
+            background:black;
+            border: 1px solid #d0cccc;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            transition: all .8s;
+          }
+       
+        
+        
+    }
+    
+    @media all and (min-width:320px) {
+       
+        .ModalBox{
+            top                   : 50%;
+            height                : 15%;
+            width                  :20%;
+            left                  : 50%;
+            right                 : auto;
+            bottom                : auto;
+            margin-right           : -50%;
+            transform             : translate(-50%, -50%);
+            border-radius:10;
+            background:black;
+            border: 1px solid #d0cccc;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            transition: all .8s;
+          }
+       
+        
+    
+       
+    
+    }
+    
+    @media all and (min-width:375px) {
+       
+        .ModalBox{
+            top                   : 50%;
+            height                : 15%;
+            width                  :20%;
+            left                  : 50%;
+            right                 : auto;
+            bottom                : auto;
+            margin-right           : -50%;
+            transform             : translate(-50%, -50%);
+            border-radius:10;
+            background:black;
+            border: 1px solid #d0cccc;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            transition: all .8s;
+          }
+       
+        
+       
+       
+    }
+    
+    @media (min-width:768px) {
+        .ModalBox{
+            top                   : 50%;
+            height                : 34%;
+            width                  :32%;
+            left                  : 50%;
+            right                 : auto;
+            bottom                : auto;
+            margin-right           : -50%;
+            transform             : translate(-50%, -50%);
+            border-radius:10;
+            background:black;
+            border: 1px solid #d0cccc;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            transition: all .8s;
+          }
+       
+    }
+    
+    @media (min-width:1024px) {
+          
+        .ModalBox{
+            top                   : 50%;
+            height: 34%;
+            width: 32%;
+            left                  : 50%;
+            right                 : auto;
+            bottom                : auto;
+            margin-right           : -50%;
+            transform             : translate(-50%, -50%);
+            border-radius:10;
+            background:black;
+            border: 1px solid #d0cccc;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            transition: all .8s;
+          }
+       
+    
+      
+    
+    }
+    
+   

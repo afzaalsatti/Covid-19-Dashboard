@@ -73,7 +73,7 @@ export default class home extends Component {
               <button
                 onClick={this.props.passedFunction}
                 id="btn1"
-                className="search_btn fl button"
+                className=" search_btn fl button"
               >
                 International Cases Details
               </button>
@@ -91,7 +91,7 @@ export default class home extends Component {
 
         <div style={{ marginTop: "130px" }} className="main_body">
           <div
-            style={{ marginRight: "18px", marginBottom: "18px", float: "left" }}
+            style={{ marginRight: "18px",marginTop:"30px", marginBottom: "18px", float: "left" }}
           >
             <Card
               Case="Confirmed Cases"
@@ -99,7 +99,7 @@ export default class home extends Component {
             />
           </div>
           <div
-            style={{ marginRight: "18px", marginBottom: "18px", float: "left" }}
+            style={{ marginRight: "18px",marginTop:"30px", marginBottom: "18px", float: "left" }}
           >
             {/* <text>{this.state.totalRecoveredLatest}</text> */}
             <Card
@@ -108,7 +108,7 @@ export default class home extends Component {
             />
           </div>
           <div
-            style={{ marginRight: "18px", marginBottom: "18px", float: "left" }}
+            style={{ marginRight: "18px",marginTop:"30px", marginBottom: "18px", float: "left" }}
           >
             {/* <text>{this.state.totalDeathsLatest}</text> */}
             <Card

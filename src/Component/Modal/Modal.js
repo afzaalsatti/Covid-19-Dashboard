@@ -1,6 +1,9 @@
 import React,{} from 'react';
 import Modal from 'react-modal';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import  ProgressBar  from "../ProgressBar/ProgressBar";
+import './Modal.css';
 const customStyles = {
   content : {
     top                   : '50%',
@@ -12,7 +15,7 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     borderWidth:2,
-    borderColor:'red',
+    borderColor:'white',
     backgroundColor:'black',
     borderRadius:10
   }
@@ -60,12 +63,13 @@ export default function App(props){
   display: 'inline-block'}} onClick={openModal}></button>}
        
         <Modal
+        //  className="ModalBox"
           ariaHideApp={false}
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
-          style={customStyles}
           contentLabel="Example Modal"
+          style={customStyles}
         >
             
           <h2 ref={_subtitle => (subtitle = _subtitle)}>{props.country}</h2>
@@ -102,9 +106,10 @@ export default function App(props){
     </div>
 
           <form>
-            
-          <button onClick={closeModal}style={{marginTop:10,top:3,right:10,borderRadius:5,position:'absolute'}}><i  className="fa fa-close"></i></button>
-           
+          <IconButton onClick={closeModal}style={{marginTop:10,top:3,right:10,borderRadius:5,position:'absolute'}} color="Primary" aria-label="Edit Record" component="span">
+                                    <CloseIcon/>
+                                </IconButton>
+  
           </form>
         </Modal>
       </div>
