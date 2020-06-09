@@ -1,6 +1,7 @@
 import React from "react";
 import ReactMapGL, { Marker, NavigationControl } from "react-map-gl";
-
+import SettingsIcon from '@material-ui/icons/Settings';
+import IconButton from '@material-ui/core/IconButton';
 import axios from "axios";
 import img1 from "../Images/darkmap.jpg";
 import img2 from "../Images/geogarphic map.jpg";
@@ -110,19 +111,21 @@ export default class Map extends React.Component {
               }
               onViewportChange={(viewport) => this.setState({ viewport })}
             >
-              <div
+               <IconButton color="Primary"
                 className="SettingIcon"
+                
                 onClick={() => {
                   this.state.toggal === false
                     ? this.setState({ toggal: true })
                     : this.setState({ toggal: false });
                 }}
               >
-                <i
-                  style={{ fontSize: "48px", color: "red" }}
-                  className="fa fa-gear"
-                ></i>
-              </div>
+               
+             
+                                    <SettingsIcon style={{ fontSize: 48 ,color:'red' }}/>
+                                </IconButton>
+  
+             
               {this.state.toggal === true ? (
                 <div className="toggalViews1">
                   <div
