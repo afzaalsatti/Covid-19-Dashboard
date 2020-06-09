@@ -194,19 +194,19 @@ export default class Map extends React.Component {
               onViewportChange={(viewport) => this.setState({ viewport })}
               zoomInLbel="Zoom In"
             >
-              <div
+              <IconButton color="Primary"
                 className="SettingIcon"
+                
                 onClick={() => {
                   this.state.toggal === false
                     ? this.setState({ toggal: true })
                     : this.setState({ toggal: false });
                 }}
               >
-                <i
-                  style={{ fontSize: "48px", color: "red" }}
-                  className="fa fa-gear"
-                ></i>
-              </div>
+               
+             
+                                    <SettingsIcon style={{ fontSize: 48 ,color:'red' }}/>
+                                </IconButton>
               {this.state.toggal === true ? (
                 <div className="toggalViews">
                   <div
@@ -275,19 +275,20 @@ export default class Map extends React.Component {
               onViewportChange={(viewport) => this.setState({ viewport })}
               zoomInLabel="Zoom In"
             >
-              <div
+              <IconButton color="Primary"
                 className="SettingIcon"
+                
                 onClick={() => {
                   this.state.toggal === false
                     ? this.setState({ toggal: true })
                     : this.setState({ toggal: false });
                 }}
               >
-                <i
-                  style={{ fontSize: "48px", color: "red" }}
-                  className="fa fa-gear"
-                ></i>
-              </div>
+               
+             
+                                    <SettingsIcon style={{ fontSize: 48 ,color:'red' }}/>
+                                </IconButton>
+              
               {this.state.toggal === true ? (
                 <div className="toggalViews">
                   <div
