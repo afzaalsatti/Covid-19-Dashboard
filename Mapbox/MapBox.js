@@ -25,7 +25,7 @@ export default class Map extends React.Component {
       totalDeathsLatest: 0,
       totalRecoveredLatest: 0,
       viewport: {
-        width: "84vw",
+        width: "83vw",
         height: "100vh",
 
         latitude: 33.0,
