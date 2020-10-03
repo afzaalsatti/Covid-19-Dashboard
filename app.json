@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Online_Shopping",
+    "slug": "Online_Shopping",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "Splash.png",
+    "splash": {
+      "image": "Splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

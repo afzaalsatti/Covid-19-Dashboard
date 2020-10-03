@@ -1,58 +1,41 @@
 {
-  "name": "covid-19-project",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.10.1",
-    "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "bootstrap": "^4.5.0",
-    "chart.js": "^2.9.3",
-    "cheerio": "^1.0.0-rc.3",
-    "git": "^0.1.5",
-    "htmlparser2": "^4.1.0",
-    "mapbox-gl": "^1.9.1",
-    "puppeteer": "^2.1.1",
-    "react": "^16.13.1",
-    "react-animated-number": "^0.4.4",
-    "react-bootstrap": "^1.0.0",
-    "react-chartjs-2": "^2.9.0",
-    "react-dom": "^16.13.1",
-    "react-map-gl": "^5.2.3",
-    "react-modal": "^3.11.2",
-    "react-redux": "^7.2.0",
-    "react-responsive-carousel": "^3.2.7",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "react-sidebar": "^3.0.2",
-    "react-step-progress-bar": "^1.0.3",
-    "redux": "^4.0.5",
-    "request": "^2.88.2",
-    "run": "^1.4.0",
-    "typeface-poppins": "0.0.72"
-  },
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@react-native-community/masked-view": "0.1.5",
+    "@react-navigation/bottom-tabs": "^5.8.0",
+    "@react-navigation/drawer": "^5.9.0",
+    "@react-navigation/material-bottom-tabs": "^5.2.16",
+    "@react-navigation/material-top-tabs": "^5.2.16",
+    "@react-navigation/native": "^5.7.3",
+    "expo": "^36.0.0",
+    "expo-cli": "^3.5.0",
+    "expo-image-picker": "^9.1.1",
+    "expo-sharing": "^8.4.1",
+    "expo-status-bar": "~1.0.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.1.tar.gz",
+    "react-native-color-picker": "^0.6.0",
+    "react-native-gesture-handler": "~1.5.0",
+    "react-native-paper": "^4.1.0",
+    "react-native-reanimated": "~1.4.0",
+    "react-native-router-flux": "^4.2.0",
+    "react-native-safe-area-context": "0.6.0",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-super-grid": "^4.0.3",
+    "react-native-tab-view": "^2.15.1",
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-web": "^0.11.7"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "devDependencies": {
+    "@babel/core": "~7.9.0"
+  },
+  "private": true
 }
